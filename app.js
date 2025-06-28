@@ -61,6 +61,11 @@ choices.forEach((choice)=>{//we want individual choice
     choice.addEventListener("click",()=>{
         const userChoice=choice.getAttribute("id");
         console.log("choice was clicked",userChoice);
+        gtag('event', 'click', {
+        'event_category': 'game',
+        'event_label': `${userChoice} clicked`
+    });
+        
 playGame(userChoice);
     });
 });
